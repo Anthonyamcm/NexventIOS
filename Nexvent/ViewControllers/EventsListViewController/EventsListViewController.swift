@@ -20,7 +20,7 @@ class EventsListViewController: UIViewController , UITableViewDataSource, UITabl
             ListView.EventsList_Table.register(CustomCell.self, forCellReuseIdentifier: "EventsCell")
             ListView.EventsList_Table.separatorStyle = UITableViewCell.SeparatorStyle.none
             ListView.EventsList_Table.tableFooterView = UIView()
-            ListView.EventsList_Table.rowHeight = 100
+            ListView.EventsList_Table.rowHeight = 125
             ListView.EventsList_Table.delegate = self
             ListView.EventsList_Table.dataSource = self
         

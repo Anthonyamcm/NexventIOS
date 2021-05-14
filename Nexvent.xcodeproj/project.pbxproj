@@ -14,6 +14,8 @@
 		2708D91B2648357C00D38C07 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D91A2648357C00D38C07 /* Utilities.swift */; };
 		2708D91D264843CA00D38C07 /* UITabBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D91C264843CA00D38C07 /* UITabBarIndicator.swift */; };
 		2708D91F264843E900D38C07 /* UITabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D91E264843E900D38C07 /* UITabBarButton.swift */; };
+		2708D924264DB66300D38C07 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D923264DB66300D38C07 /* Chart.swift */; };
+		2708D926264DB69300D38C07 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D925264DB69300D38C07 /* CurveAlgorithm.swift */; };
 		271D4672263B383D001A172C /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D4671263B383C001A172C /* TagView.swift */; };
 		272AC42C263068C80033C323 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272AC42B263068C80033C323 /* DashBoardView.swift */; };
 		273C41D4262998240034BAA4 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273C41D3262998240034BAA4 /* UITabBar.swift */; };
@@ -23,6 +25,8 @@
 		2748D042263DF2B500E0033E /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748D041263DF2B500E0033E /* MonthView.swift */; };
 		275F61EE263DCEDA00D09115 /* DayRangeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F61ED263DCEDA00D09115 /* DayRangeIndicatorView.swift */; };
 		275F61F0263DCF1500D09115 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F61EF263DCF1500D09115 /* DayView.swift */; };
+		276F2D48264E8EBC00DF829E /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F2D47264E8EBC00DF829E /* BarGraph.swift */; };
+		276F2D4A264E8ED300DF829E /* BarGraphPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F2D49264E8ED300DF829E /* BarGraphPresenter.swift */; };
 		277E1AB0263365B700BFF808 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1AAF263365B700BFF808 /* MapViewController.swift */; };
 		277E1ACA2633670B00BFF808 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1AC92633670B00BFF808 /* TagsViewController.swift */; };
 		277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1ACE2633671F00BFF808 /* CalendarViewController.swift */; };
@@ -82,6 +86,8 @@
 		2708D91A2648357C00D38C07 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2708D91C264843CA00D38C07 /* UITabBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarIndicator.swift; sourceTree = "<group>"; };
 		2708D91E264843E900D38C07 /* UITabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarButton.swift; sourceTree = "<group>"; };
+		2708D923264DB66300D38C07 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		2708D925264DB69300D38C07 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 		271D4671263B383C001A172C /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		272AC42B263068C80033C323 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		273C41D3262998240034BAA4 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 		2748D041263DF2B500E0033E /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		275F61ED263DCEDA00D09115 /* DayRangeIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRangeIndicatorView.swift; sourceTree = "<group>"; };
 		275F61EF263DCF1500D09115 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		276F2D47264E8EBC00DF829E /* BarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
+		276F2D49264E8ED300DF829E /* BarGraphPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphPresenter.swift; sourceTree = "<group>"; };
 		277E1AAF263365B700BFF808 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		277E1AC92633670B00BFF808 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		277E1ACE2633671F00BFF808 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +179,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2708D922264DB64D00D38C07 /* Line Graph */ = {
+			isa = PBXGroup;
+			children = (
+				2708D923264DB66300D38C07 /* Chart.swift */,
+				2708D925264DB69300D38C07 /* CurveAlgorithm.swift */,
+			);
+			path = "Line Graph";
+			sourceTree = "<group>";
+		};
 		271D4670263B382A001A172C /* TagView */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +242,15 @@
 				2748D041263DF2B500E0033E /* MonthView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		276F2D46264E8E8A00DF829E /* Bar Graph */ = {
+			isa = PBXGroup;
+			children = (
+				276F2D47264E8EBC00DF829E /* BarGraph.swift */,
+				276F2D49264E8ED300DF829E /* BarGraphPresenter.swift */,
+			);
+			path = "Bar Graph";
 			sourceTree = "<group>";
 		};
 		277E1AAD2633654100BFF808 /* MapView */ = {
@@ -466,6 +492,8 @@
 		27FEB3F82628F0BB00E84553 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				276F2D46264E8E8A00DF829E /* Bar Graph */,
+				2708D922264DB64D00D38C07 /* Line Graph */,
 				275F61EC263DCEC000D09115 /* Calendar */,
 				273C41D22629980E0034BAA4 /* TabBar */,
 				27FEB3FA2628F0F800E84553 /* Card */,
@@ -767,11 +795,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2748D042263DF2B500E0033E /* MonthView.swift in Sources */,
+				276F2D4A264E8ED300DF829E /* BarGraphPresenter.swift in Sources */,
 				27CD2D6526264E0A007B24D4 /* LoginViewController.swift in Sources */,
 				275F61F0263DCF1500D09115 /* DayView.swift in Sources */,
 				27FEB42F2628FA5000E84553 /* CardContent.swift in Sources */,
 				275F61EE263DCEDA00D09115 /* DayRangeIndicatorView.swift in Sources */,
 				2708D91D264843CA00D38C07 /* UITabBarIndicator.swift in Sources */,
+				276F2D48264E8EBC00DF829E /* BarGraph.swift in Sources */,
 				273C41EC262999270034BAA4 /* TabBarViewController.swift in Sources */,
 				27FEB4342628FA6F00E84553 /* CardFooter.swift in Sources */,
 				27CD2D792627A819007B24D4 /* EventsListViewController.swift in Sources */,
@@ -789,6 +819,7 @@
 				277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */,
 				27CD2D342626426A007B24D4 /* RegisterView.swift in Sources */,
 				27A48CA4262ECBA3008F870C /* DashboardViewController.swift in Sources */,
+				2708D926264DB69300D38C07 /* CurveAlgorithm.swift in Sources */,
 				27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */,
 				27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */,
 				277E1ACA2633670B00BFF808 /* TagsViewController.swift in Sources */,
@@ -798,6 +829,7 @@
 				2708D918264833FF00D38C07 /* UserModel.swift in Sources */,
 				27CD2D8B2627AC94007B24D4 /* CustomCell.swift in Sources */,
 				27CD2CE826263EBA007B24D4 /* SceneDelegate.swift in Sources */,
+				2708D924264DB66300D38C07 /* Chart.swift in Sources */,
 				277E1AD42633682900BFF808 /* Map.swift in Sources */,
 				27FEB4392628FA8300E84553 /* CardOverlay.swift in Sources */,
 				273C41D4262998240034BAA4 /* UITabBar.swift in Sources */,
@@ -977,6 +1009,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W75S5ZGF94;
 				INFOPLIST_FILE = Nexvent/Info.plist;
@@ -985,8 +1018,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NEXURE.Nexvent;
+				PRODUCT_BUNDLE_IDENTIFIER = NEX.Nexvent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -998,6 +1032,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W75S5ZGF94;
 				INFOPLIST_FILE = Nexvent/Info.plist;
@@ -1006,8 +1041,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NEXURE.Nexvent;
+				PRODUCT_BUNDLE_IDENTIFIER = NEX.Nexvent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1064,6 +1100,7 @@
 			baseConfigurationReference = DD58D932E7E99516A424525C /* Pods-Nexvent-NexventUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W75S5ZGF94;
 				INFOPLIST_FILE = NexventUITests/Info.plist;
@@ -1085,6 +1122,7 @@
 			baseConfigurationReference = 11DE0DF0D1BBF43317AA2D1C /* Pods-Nexvent-NexventUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W75S5ZGF94;
 				INFOPLIST_FILE = NexventUITests/Info.plist;

@@ -56,6 +56,16 @@ class DashBoardView: UIView {
         return view
     }()
     
+    var CalendarTitle: UILabel = {
+        var Title = UILabel()
+        Title.translatesAutoresizingMaskIntoConstraints = false
+        Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
+        Title.textAlignment = .left
+        Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
+        Title.text = "Calendar"
+        return Title
+    }()
+    
     var TagsView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +77,16 @@ class DashBoardView: UIView {
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.layer.cornerRadius = 12
         return view
+    }()
+    
+    var TagsTitle: UILabel = {
+        var Title = UILabel()
+        Title.translatesAutoresizingMaskIntoConstraints = false
+        Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
+        Title.textAlignment = .left
+        Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
+        Title.text = "Tags"
+        return Title
     }()
     
     var LocationView: UIView = {
@@ -82,7 +102,17 @@ class DashBoardView: UIView {
         return view
     }()
     
-    var View: UIView = {
+    var LocationTitle: UILabel = {
+        var Title = UILabel()
+        Title.translatesAutoresizingMaskIntoConstraints = false
+        Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
+        Title.textAlignment = .left
+        Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
+        Title.text = "Location"
+        return Title
+    }()
+    
+    var ChartView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.masksToBounds = false
@@ -95,53 +125,17 @@ class DashBoardView: UIView {
         return view
     }()
     
-//    var LocationButton: GradientButton = {
-//        var Button  = GradientButton()
-//        Button.translatesAutoresizingMaskIntoConstraints = false
-//        Button.layer.shadowOpacity = 0.3
-//        Button.layer.shadowRadius = 12.0
-//        Button.layer.shadowColor = UIColor.systemBlue.cgColor
-//        Button.layer.cornerRadius = 12
-//        Button.setImage(UIImage(named: "map-marked"), for: .normal)
-//        Button.setImage(UIImage(named: "map-marked"), for: .highlighted)
-//        Button.imageView?.contentMode = .scaleAspectFit
-//        Button.layer.zPosition = 1
-//        Button.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        Button.addTarget(DashboardViewController(), action: #selector(DashboardViewController.LocationPressed), for: .touchUpInside)
-//        return Button
-//    }()
-//
-//    var TagsButton: GradientButton = {
-//        var Button  = GradientButton()
-//        Button.translatesAutoresizingMaskIntoConstraints = false
-//        Button.layer.shadowOpacity = 0.3
-//        Button.layer.shadowRadius = 12.0
-//        Button.layer.shadowColor = UIColor.systemBlue.cgColor
-//        Button.layer.cornerRadius = 12
-//        Button.setImage(UIImage(named: "tags"), for: .normal)
-//        Button.setImage(UIImage(named: "tags"), for: .highlighted)
-//        Button.imageView?.contentMode = .scaleAspectFit
-//        Button.layer.zPosition = 1
-//        Button.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        Button.addTarget(DashboardViewController(), action: #selector(DashboardViewController.TagPressed), for: .touchUpInside)
-//        return Button
-//    }()
-//
-//    var DateButton: GradientButton = {
-//        var Button  = GradientButton()
-//        Button.translatesAutoresizingMaskIntoConstraints = false
-//        Button.layer.shadowOpacity = 0.3
-//        Button.layer.shadowRadius = 12.0
-//        Button.layer.shadowColor = UIColor.systemBlue.cgColor
-//        Button.layer.cornerRadius = 12
-//        Button.setImage(UIImage(named: "calendar"), for: .normal)
-//        Button.setImage(UIImage(named: "calendar"), for: .highlighted)
-//        Button.imageView?.contentMode = .scaleAspectFit
-//        Button.layer.zPosition = 1
-//        Button.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        Button.addTarget(DashboardViewController(), action: #selector(DashboardViewController.CalenderPressed), for: .touchUpInside)
-//        return Button
-//    }()
+    var ChartTitle: UILabel = {
+        var Title = UILabel()
+        Title.translatesAutoresizingMaskIntoConstraints = false
+        Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
+        Title.textAlignment = .left
+        Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
+        Title.text = "Active Events"
+        return Title
+    }()
+    
+
     
     
     override init(frame: CGRect) {
@@ -162,61 +156,53 @@ class DashBoardView: UIView {
         Settings.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         Settings.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45).isActive = true
         
+        self.addSubview(ChartView)
+        
+        ChartView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
+        ChartView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        ChartView.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor,constant: 20).isActive = true
+        ChartView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        ChartView.addSubview(ChartTitle)
+        
+        ChartTitle.topAnchor.constraint(equalTo: ChartView.topAnchor, constant: 10).isActive = true
+        ChartTitle.leftAnchor.constraint(equalTo: ChartView.leftAnchor, constant: 10).isActive = true
+        
         self.addSubview(CalendarView)
         
         CalendarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-        CalendarView.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor, constant: 20).isActive = true
-        CalendarView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        CalendarView.topAnchor.constraint(equalTo: ChartView.bottomAnchor, constant: 20).isActive = true
+        CalendarView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         CalendarView.widthAnchor.constraint(equalToConstant: 170).isActive = true
+        
+        CalendarView.addSubview(CalendarTitle)
+        
+        CalendarTitle.topAnchor.constraint(equalTo: CalendarView.topAnchor, constant: 10).isActive = true
+        CalendarTitle.leftAnchor.constraint(equalTo: CalendarView.leftAnchor, constant: 10).isActive = true
         
         self.addSubview(TagsView)
         
         TagsView.leadingAnchor.constraint(equalTo: CalendarView.trailingAnchor, constant: 30).isActive = true
-        TagsView.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor, constant: 20).isActive = true
-        TagsView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        TagsView.topAnchor.constraint(equalTo: ChartView.bottomAnchor, constant: 20).isActive = true
+        TagsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -110).isActive = true
         TagsView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        
+        TagsView.addSubview(TagsTitle)
+        
+        TagsTitle.topAnchor.constraint(equalTo: TagsView.topAnchor, constant: 10).isActive = true
+        TagsTitle.leftAnchor.constraint(equalTo: TagsView.leftAnchor, constant: 10).isActive = true
         
         self.addSubview(LocationView)
         
         LocationView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         LocationView.topAnchor.constraint(equalTo: CalendarView.bottomAnchor, constant: 30).isActive = true
-        LocationView.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        LocationView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -110).isActive = true
         LocationView.widthAnchor.constraint(equalToConstant: 170).isActive = true
         
-        self.addSubview(View)
+        LocationView.addSubview(LocationTitle)
         
-        View.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-        View.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
-        View.topAnchor.constraint(equalTo: LocationView.bottomAnchor,constant: 30).isActive = true
-        View.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -110).isActive = true
-        
-        
-//        self.addSubview(LocationButton)
-//
-//        LocationButton.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor, constant: 20).isActive = true
-//        LocationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-//        LocationButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        LocationButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
-//
-//        self.addSubview(TagsButton)
-//
-//        TagsButton.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor, constant: 20).isActive = true
-//        TagsButton.leadingAnchor.constraint(equalTo: LocationButton.trailingAnchor, constant: 33).isActive = true
-//        TagsButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        TagsButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
-//
-//        self.addSubview(DateButton)
-//
-//        DateButton.topAnchor.constraint(equalTo: DashBoardSubTitle.bottomAnchor, constant: 20).isActive = true
-//        DateButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-//        DateButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        DateButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
-//
-
-            
-        
-        
-        
+        LocationTitle.topAnchor.constraint(equalTo: LocationView.topAnchor, constant: 10).isActive = true
+        LocationTitle.leftAnchor.constraint(equalTo: LocationView.leftAnchor, constant: 10).isActive = true
         
     }
     
