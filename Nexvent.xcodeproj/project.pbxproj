@@ -32,6 +32,7 @@
 		277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1ACE2633671F00BFF808 /* CalendarViewController.swift */; };
 		277E1AD42633682900BFF808 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1AD32633682900BFF808 /* Map.swift */; };
 		27A48CA4262ECBA3008F870C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A48CA3262ECBA3008F870C /* DashboardViewController.swift */; };
+		27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */; };
 		27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE526263EBA007B24D4 /* AppDelegate.swift */; };
 		27CD2CE826263EBA007B24D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE726263EBA007B24D4 /* SceneDelegate.swift */; };
 		27CD2CEA26263EBA007B24D4 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE926263EBA007B24D4 /* LandingViewController.swift */; };
@@ -104,6 +105,7 @@
 		277E1ACE2633671F00BFF808 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		277E1AD32633682900BFF808 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		27A48CA3262ECBA3008F870C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDashBoard.swift; sourceTree = "<group>"; };
 		27CD2CE226263EBA007B24D4 /* Nexvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CD2CE526263EBA007B24D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CD2CE726263EBA007B24D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				275F61ED263DCEDA00D09115 /* DayRangeIndicatorView.swift */,
 				275F61EF263DCF1500D09115 /* DayView.swift */,
 				2748D041263DF2B500E0033E /* MonthView.swift */,
+				27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				27CD2D342626426A007B24D4 /* RegisterView.swift in Sources */,
 				27A48CA4262ECBA3008F870C /* DashboardViewController.swift in Sources */,
 				2708D926264DB69300D38C07 /* CurveAlgorithm.swift in Sources */,
+				27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */,
 				27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */,
 				27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */,
 				277E1ACA2633670B00BFF808 /* TagsViewController.swift in Sources */,

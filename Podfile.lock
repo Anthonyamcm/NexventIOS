@@ -341,6 +341,7 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - Shuffle-iOS (0.5.0)
+  - SwiftIcons (3.0)
   - TTGTagCollectionView (2.0.1)
 
 DEPENDENCIES:
@@ -351,6 +352,7 @@ DEPENDENCIES:
   - Hero
   - HorizonCalendar
   - Shuffle-iOS
+  - SwiftIcons
   - TTGTagCollectionView
 
 SPEC REPOS:
@@ -377,6 +379,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Shuffle-iOS
+    - SwiftIcons
     - TTGTagCollectionView
 
 SPEC CHECKSUMS:
@@ -402,8 +405,9 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
+  SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
   TTGTagCollectionView: 29d01ece199c257943ba490e9989734382cda5ae
 
-PODFILE CHECKSUM: 7e82c23ff5b4f5f796aaf0a52efcf60e2d7f6d7b
+PODFILE CHECKSUM: a85a0cb8ac13f5264cdcb00b416bcf879ecfd704
 
 COCOAPODS: 1.10.1

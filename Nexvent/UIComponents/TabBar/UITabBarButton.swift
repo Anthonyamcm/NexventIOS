@@ -11,13 +11,13 @@ import UIKit
 
 public class UITabBarButton: UIButton {
     
-    var selectedColor: UIColor! = UIColor(red: (0/255.0), green: (114/255.0), blue: (255/255.0), alpha: 1) {
+    var selectedColor: UIColor! = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0) {
         didSet {
             reloadApperance()
         }
     }
     
-    var unselectedColor: UIColor! = UIColor(red: (0/255.0), green: (114/255.0), blue: (255/255.0), alpha: 1) {
+    var unselectedColor: UIColor! = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0) {
         didSet {
             reloadApperance()
         }

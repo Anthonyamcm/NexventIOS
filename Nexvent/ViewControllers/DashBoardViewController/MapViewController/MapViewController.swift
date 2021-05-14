@@ -22,6 +22,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.backgroundColor = .white
         map = Map(frame: CGRect(x: 0, y: 0, width: screenSize().width, height: screenSize().height))
         self.view.addSubview(map)
+    
+        
         configureLocationServices()
         
     }

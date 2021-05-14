@@ -57,7 +57,7 @@ class CardStackViewController: UIViewController {
     
     private func layoutCardStackView() {
         view.addSubview(cardStack)
-        cardStack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: -10, paddingLeft: 0, paddingBottom: 15, paddingRight: 0, width: 0, height: 0)
+        cardStack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: -10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     @objc private func handleShift(_ sender: UIButton) {

@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import TTGTagCollectionView
+import SwiftIcons
 
 class DashBoardView: UIView {
 
@@ -37,7 +39,7 @@ class DashBoardView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 24
         button.backgroundColor = .clear
-        button.setImage(UIImage(named: "slider"), for: .normal)
+        button.setImage(UIImage.init(icon: .fontAwesomeSolid(.cogs), size: CGSize(width: 38, height: 38), textColor: UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.layer.zPosition = 1;
         return button
@@ -89,6 +91,12 @@ class DashBoardView: UIView {
         return Title
     }()
     
+    var collectionView: TTGTextTagCollectionView = {
+        var collection = TTGTextTagCollectionView()
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
+    
     var LocationView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -110,6 +118,17 @@ class DashBoardView: UIView {
         Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
         Title.text = "Location"
         return Title
+    }()
+    
+    var Location: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
+        label.textAlignment = .left
+        label.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
+        label.numberOfLines = 2
+        label.text = "Glasgow, United Kingdom"
+        return label
     }()
     
     var ChartView: UIView = {
@@ -153,7 +172,7 @@ class DashBoardView: UIView {
         
         self.addSubview(Settings)
         
-        Settings.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        Settings.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         Settings.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45).isActive = true
         
         self.addSubview(ChartView)
@@ -168,41 +187,56 @@ class DashBoardView: UIView {
         ChartTitle.topAnchor.constraint(equalTo: ChartView.topAnchor, constant: 10).isActive = true
         ChartTitle.leftAnchor.constraint(equalTo: ChartView.leftAnchor, constant: 10).isActive = true
         
-        self.addSubview(CalendarView)
-        
-        CalendarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-        CalendarView.topAnchor.constraint(equalTo: ChartView.bottomAnchor, constant: 20).isActive = true
-        CalendarView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-        CalendarView.widthAnchor.constraint(equalToConstant: 170).isActive = true
-        
-        CalendarView.addSubview(CalendarTitle)
-        
-        CalendarTitle.topAnchor.constraint(equalTo: CalendarView.topAnchor, constant: 10).isActive = true
-        CalendarTitle.leftAnchor.constraint(equalTo: CalendarView.leftAnchor, constant: 10).isActive = true
-        
         self.addSubview(TagsView)
         
-        TagsView.leadingAnchor.constraint(equalTo: CalendarView.trailingAnchor, constant: 30).isActive = true
+        TagsView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         TagsView.topAnchor.constraint(equalTo: ChartView.bottomAnchor, constant: 20).isActive = true
         TagsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -110).isActive = true
-        TagsView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        TagsView.widthAnchor.constraint(equalToConstant: 175).isActive = true
         
         TagsView.addSubview(TagsTitle)
         
         TagsTitle.topAnchor.constraint(equalTo: TagsView.topAnchor, constant: 10).isActive = true
         TagsTitle.leftAnchor.constraint(equalTo: TagsView.leftAnchor, constant: 10).isActive = true
         
+        TagsView.addSubview(collectionView)
+
+        collectionView.topAnchor.constraint(equalTo: TagsTitle.bottomAnchor, constant: 10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: TagsView.leadingAnchor, constant: 10).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: TagsView.trailingAnchor, constant: -10).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: TagsView.bottomAnchor, constant: -5).isActive = true
+        
+        self.addSubview(CalendarView)
+        
+        CalendarView.leadingAnchor.constraint(equalTo: TagsView.trailingAnchor, constant: 30).isActive = true
+        CalendarView.topAnchor.constraint(equalTo: ChartView.bottomAnchor, constant: 20).isActive = true
+        CalendarView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        CalendarView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        
+        CalendarView.addSubview(CalendarTitle)
+        
+        CalendarTitle.topAnchor.constraint(equalTo: CalendarView.topAnchor, constant: 10).isActive = true
+        CalendarTitle.leftAnchor.constraint(equalTo: CalendarView.leftAnchor, constant: 10).isActive = true
+        
+    
         self.addSubview(LocationView)
         
-        LocationView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
+        LocationView.leadingAnchor.constraint(equalTo: TagsView.trailingAnchor, constant: 30).isActive = true
         LocationView.topAnchor.constraint(equalTo: CalendarView.bottomAnchor, constant: 30).isActive = true
         LocationView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -110).isActive = true
-        LocationView.widthAnchor.constraint(equalToConstant: 170).isActive = true
+        LocationView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         
         LocationView.addSubview(LocationTitle)
         
         LocationTitle.topAnchor.constraint(equalTo: LocationView.topAnchor, constant: 10).isActive = true
         LocationTitle.leftAnchor.constraint(equalTo: LocationView.leftAnchor, constant: 10).isActive = true
+        
+        LocationView.addSubview(Location)
+        
+        Location.topAnchor.constraint(equalTo: LocationTitle.bottomAnchor, constant: 10).isActive = true
+        Location.leadingAnchor.constraint(equalTo: LocationView.leadingAnchor, constant: 10).isActive = true
+        Location.trailingAnchor.constraint(equalTo: LocationView.trailingAnchor, constant: -15).isActive = true
+    
         
     }
     

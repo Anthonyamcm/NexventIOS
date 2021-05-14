@@ -339,6 +339,7 @@ extension CALayer {
         let layer = CALayer()
         layer.frame = frame
         layer.cornerRadius = 4
+        layer.backgroundColor = color
         
         let gradient = CAGradientLayer()
          gradient.frame = layer.bounds

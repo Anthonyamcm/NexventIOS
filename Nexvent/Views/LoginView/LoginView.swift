@@ -14,7 +14,7 @@ class LoginView: UIView {
     var Back_Button: UIButton = {
             var Button = UIButton()
             Button.translatesAutoresizingMaskIntoConstraints = false
-            Button.setImage(UIImage(named: "cross"), for: .normal)
+            Button.setImage(UIImage.init(icon: .fontAwesomeSolid(.times), size: CGSize(width: 42, height: 42), textColor: UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)), for: .normal)
             Button.layer.cornerRadius = 0.5 * 30
             Button.addTarget(LoginViewController(), action: #selector(LoginViewController.backPressed), for: .touchUpInside)
             return Button
