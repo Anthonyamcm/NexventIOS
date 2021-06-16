@@ -13,7 +13,7 @@ import UIKit
 class RegisterView: UIView {
     var shouldSetupConstraints = true
     
-    var Back_Button: UIButton = {
+    var backButton: UIButton = {
             var Button = UIButton()
             Button.translatesAutoresizingMaskIntoConstraints = false
             Button.setImage(UIImage.init(icon: .fontAwesomeSolid(.times), size: CGSize(width: 42, height: 42), textColor: UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)), for: .normal)
@@ -22,7 +22,7 @@ class RegisterView: UIView {
             return Button
         }()
     
-    var Register_Title: UILabel = {
+    var registerTitle: UILabel = {
         var Title = UILabel()
         Title.translatesAutoresizingMaskIntoConstraints = false
         Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
@@ -32,84 +32,7 @@ class RegisterView: UIView {
         return Title
     }()
     
-    var FirstName_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.default
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
-        return TextField
-    }()
-    
-    var LastName_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.default
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
-        return TextField
-    }()
-    
-    var Email_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.emailAddress
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
-        return TextField
-    }()
-    
-    var Password_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.default
-        TextField.isSecureTextEntry = true
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
-        return TextField
-    }()
-    
-    var Terms_Label: UILabel = {
+    var termsLabel: UILabel = {
         var TermsAndConditions = UILabel()
         TermsAndConditions.translatesAutoresizingMaskIntoConstraints = false
         TermsAndConditions.textColor = .lightGray
@@ -120,7 +43,7 @@ class RegisterView: UIView {
         return TermsAndConditions
     }()
     
-    var register_button: GradientButton = {
+    var registerButton: GradientButton = {
         var Button = GradientButton()
         Button.translatesAutoresizingMaskIntoConstraints = false
         Button.setTitle("Sign up", for: .normal)
@@ -133,6 +56,18 @@ class RegisterView: UIView {
         return Button
     }()
     
+    var passwordTextField: UITextField = {
+        var TextField = CustomTextField(placeholder: "Password")
+        TextField.isSecureTextEntry = true
+        return TextField
+    }()
+    
+    var fullNameTextField = CustomTextField(placeholder: "Full Name")
+    
+    var emailTextField = CustomTextField(placeholder: "Email")
+    
+ 
+    
 
 
     override init(frame: CGRect) {
@@ -140,60 +75,50 @@ class RegisterView: UIView {
         
         
         
-        self.addSubview(Back_Button)
+        self.addSubview(backButton)
         
     
-        Back_Button.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
-        Back_Button.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+        backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
+        backButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
         
-        self.addSubview(Register_Title)
+        self.addSubview(registerTitle)
         
-        Register_Title.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        Register_Title.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
-        Register_Title.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        
-        
-        self.addSubview(FirstName_Field)
-        
-        FirstName_Field.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        FirstName_Field.topAnchor.constraint(equalTo: Register_Title.bottomAnchor, constant: 50).isActive = true
-        FirstName_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
-        FirstName_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        self.addSubview(LastName_Field)
-        
-        LastName_Field.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
-        LastName_Field.topAnchor.constraint(equalTo: Register_Title.bottomAnchor, constant: 50).isActive = true
-        LastName_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
-        LastName_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        self.addSubview(Email_Field)
-        
-        Email_Field.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        Email_Field.topAnchor.constraint(equalTo: FirstName_Field.bottomAnchor, constant: 25).isActive = true
-        Email_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
-        Email_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        registerTitle.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        registerTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
+        registerTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
         
         
-        self.addSubview(Password_Field)
+        self.addSubview(fullNameTextField)
         
-        Password_Field.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        Password_Field.topAnchor.constraint(equalTo: Email_Field.bottomAnchor, constant: 25).isActive = true
-        Password_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
-        Password_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        fullNameTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        fullNameTextField.topAnchor.constraint(equalTo: registerTitle.bottomAnchor, constant: 50).isActive = true
+        fullNameTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
         
-        self.addSubview(Terms_Label)
+        self.addSubview(emailTextField)
         
-        Terms_Label.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7).isActive = true
-        Terms_Label.topAnchor.constraint(equalTo: Password_Field.bottomAnchor, constant: 50).isActive = true
-        Terms_Label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: fullNameTextField.bottomAnchor, constant: 25).isActive = true
+        emailTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
         
-        self.addSubview(register_button)
         
-        register_button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        register_button.topAnchor.constraint(equalTo: Terms_Label.bottomAnchor, constant: 50).isActive = true
-        register_button.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -150).isActive = true
-        register_button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.addSubview(passwordTextField)
+        
+        passwordTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
+        
+        self.addSubview(termsLabel)
+        
+        termsLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7).isActive = true
+        termsLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50).isActive = true
+        termsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        self.addSubview(registerButton)
+        
+        registerButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        registerButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 50).isActive = true
+        registerButton.widthAnchor.constraint(equalTo: self.widthAnchor,  multiplier: 0.85).isActive = true
+        registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
         self.layoutIfNeeded()

@@ -30,7 +30,7 @@ class DashBoardView: UIView {
         Title.textColor = .lightGray
         Title.textAlignment = .left
         Title.font = UIFont(name: "GTEestiDisplay-Medium", size: 18)
-        Title.text = "Anthony McMillan"
+        Title.text = "Loading.."
         return Title
     }()
     

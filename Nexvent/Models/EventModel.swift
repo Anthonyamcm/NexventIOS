@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct CardModel {
+struct EventModel {
     
     let name: String
     let location: String?

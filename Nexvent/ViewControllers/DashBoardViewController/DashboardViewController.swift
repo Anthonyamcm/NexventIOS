@@ -8,6 +8,7 @@
 import UIKit
 import HorizonCalendar
 import TTGTagCollectionView
+import Firebase
 
 
 class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate{
@@ -34,6 +35,7 @@ class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        fetchUser()
         
         DashBoard = DashBoardView(frame: CGRect(x: 0, y: 0, width: screenSize().width, height: screenSize().height))
         view.addSubview(DashBoard)
@@ -42,6 +44,7 @@ class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate
         setUpCalender()
         setUpTagView()
         
+        
         let locationTap = UITapGestureRecognizer(target: self, action: #selector(self.LocationPressed(_:)))
         DashBoard.LocationView.addGestureRecognizer(locationTap)
         DashBoard.LocationView.isUserInteractionEnabled = true
@@ -49,6 +52,12 @@ class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate
         
     }
     
+    func fetchUser(){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Service.fetchUser(withUid: uid) { user in
+            self.DashBoard.DashBoardSubTitle.text = user.name
+        }
+    }
 
     
     func setUpCalender() {

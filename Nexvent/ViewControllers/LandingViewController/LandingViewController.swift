@@ -14,6 +14,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
         Landing = LandingView(frame: CGRect(x: 0, y: 0, width: screenSize().width, height: screenSize().height))
         self.view.addSubview(Landing)
     }
@@ -21,33 +22,17 @@ class LandingViewController: UIViewController {
     // MARK: Login Button logic
     
         @objc func LoginPressed(sender: UIButton!) {
-            self.dismiss(animated: true, completion: nil)
-            let LoginController = LoginViewController()
-            LoginController.modalPresentationStyle = .fullScreen
-            LoginController.view.layoutIfNeeded()
-            self.present(LoginController, animated: true)
+            navigationController?.pushViewController(LoginViewController(), animated: true)
         }
 
     
     // MARK: Register Button logic
         
         @objc func RegisterPressed(sender: UIButton!) {
-            self.dismiss(animated: true, completion: nil)
-            let RegisterViewController = RegisterViewController()
-            RegisterViewController.modalPresentationStyle = .fullScreen
-            RegisterViewController.view.layoutIfNeeded()
-            self.present(RegisterViewController, animated: true)
-//            UIView.transition(with: self.view.window!,
-//                              duration: 0.5,
-//                              options: [.transitionFlipFromLeft],
-//                              animations: nil,
-//                              completion: nil)
+            navigationController?.pushViewController(RegisterViewController(), animated: true)
           }
     
     
-    @objc func backPressed(sender: UIButton!) {
-        self.dismiss(animated: true, completion: nil)
-    }
 
 }
 

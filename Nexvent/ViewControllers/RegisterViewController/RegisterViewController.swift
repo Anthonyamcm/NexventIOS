@@ -14,29 +14,32 @@ import FirebaseFirestore
 class RegisterViewController: UIViewController {
     
     var Register: RegisterView!
+    
+    private var viewModel = registerViewModel()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         Register = RegisterView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height))
         self.view.addSubview(Register)
+        configureTextFieldObservers()
         
     }
     
     func validateFields() -> String? {
         
         // Check that all fields are filled in
-        if Register.FirstName_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            Register.LastName_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            Register.Email_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            Register.Password_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if Register.fullNameTextField.text == "" ||
+            Register.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            Register.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all fields."
             
         }
         
         // Check if the password is secure
-        let cleanedPassword = Register.Password_Field.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedPassword = Register.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
             // Password isn't secure enough
@@ -47,51 +50,44 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func RegisterPressed(sender: UIButton!) {
-        let error = validateFields()
+            guard let fullName = Register.fullNameTextField.text  else {return}
+            guard let email = Register.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {return}
+            guard let password = Register.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {return}
         
-        if error != nil {
-            
-            // There's something wrong with the fields, show error message
-            print(error!)
-        }
-        else {
-            
-            // Create cleaned versions of the data
-            let firstName = Register.FirstName_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = Register.LastName_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = (Register.Email_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-            let password = (Register.Password_Field.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-            
-            // Create the user
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                
-                // Check for errors
-                if err != nil {
-                    
-                    // There was an error creating the user
-                    print("Error creating user")
-                }
-                else {
-                    
-                    // User was created successfully, now store the first name and last name
-                    let db = Firestore.firestore()
-                    
-                    db.collection("Users").addDocument(data: ["firstName":firstName!, "lastName":lastName!,"email": email , "uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            print("error creating user")
-                        }
-                    }
-                    
-                    // Transition to the home screen
-                    self.transitionToHome()
-                }
-                
+            let credentials = AuthCredentials(email: email, password: password, fullName: fullName)
+        
+        AuthService.registerUser(withCredientials: credentials) { error in
+            if let error = error {
+                print("DEBUG: Error signing user up \(error.localizedDescription)")
+                return
             }
-            
-            
-            
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    func configureTextFieldObservers() {
+        Register.emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        Register.passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        Register.fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == Register.emailTextField {
+            viewModel.email = sender.text
+        } else if sender == Register.passwordTextField {
+            viewModel.password = sender.text
+        } else {
+            viewModel.fullName = sender.text
+        }
+    }
+    
+    func checkFormStatus() {
+        if viewModel.isFormValid{
+            Register.registerButton.isEnabled = true
+        } else {
+            Register.registerButton.isEnabled = false
         }
     }
     
@@ -112,9 +108,7 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func backPressed(sender: UIButton!) {
-        let landingViewController = LandingViewController()
-        self.view.window?.rootViewController = landingViewController
-        self.view.window?.makeKeyAndVisible()
+        navigationController?.popViewController(animated: true)
     }
     
 }

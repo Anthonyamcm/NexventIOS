@@ -32,6 +32,11 @@
 		277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1ACE2633671F00BFF808 /* CalendarViewController.swift */; };
 		277E1AD42633682900BFF808 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1AD32633682900BFF808 /* Map.swift */; };
 		27A48CA4262ECBA3008F870C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A48CA3262ECBA3008F870C /* DashboardViewController.swift */; };
+		27B5491F267A1DBB003A3993 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5491E267A1DBB003A3993 /* CustomTextField.swift */; };
+		27B54922267A282F003A3993 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54921267A282F003A3993 /* AuthenticationViewModel.swift */; };
+		27B54925267A3051003A3993 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54924267A3051003A3993 /* AuthService.swift */; };
+		27B54927267A7497003A3993 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54926267A7497003A3993 /* Service.swift */; };
+		27B54929267A754D003A3993 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54928267A754D003A3993 /* Constants.swift */; };
 		27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */; };
 		27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE526263EBA007B24D4 /* AppDelegate.swift */; };
 		27CD2CE826263EBA007B24D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE726263EBA007B24D4 /* SceneDelegate.swift */; };
@@ -52,7 +57,7 @@
 		27CD2D792627A819007B24D4 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D782627A819007B24D4 /* EventsListViewController.swift */; };
 		27CD2D822627A8B8007B24D4 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D812627A8B8007B24D4 /* EventsListView.swift */; };
 		27CD2D8B2627AC94007B24D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D8A2627AC94007B24D4 /* CustomCell.swift */; };
-		27FEB3FC2628F14900E84553 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB3FB2628F14900E84553 /* CardModel.swift */; };
+		27FEB3FC2628F14900E84553 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB3FB2628F14900E84553 /* EventModel.swift */; };
 		27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB4142628F2A000E84553 /* CardStackViewController.swift */; };
 		27FEB42F2628FA5000E84553 /* CardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB42E2628FA5000E84553 /* CardContent.swift */; };
 		27FEB4342628FA6F00E84553 /* CardFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB4332628FA6F00E84553 /* CardFooter.swift */; };
@@ -105,6 +110,11 @@
 		277E1ACE2633671F00BFF808 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		277E1AD32633682900BFF808 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		27A48CA3262ECBA3008F870C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		27B5491E267A1DBB003A3993 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		27B54921267A282F003A3993 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		27B54924267A3051003A3993 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		27B54926267A7497003A3993 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		27B54928267A754D003A3993 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDashBoard.swift; sourceTree = "<group>"; };
 		27CD2CE226263EBA007B24D4 /* Nexvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CD2CE526263EBA007B24D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +141,7 @@
 		27CD2D782627A819007B24D4 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		27CD2D812627A8B8007B24D4 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		27CD2D8A2627AC94007B24D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		27FEB3FB2628F14900E84553 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		27FEB3FB2628F14900E84553 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		27FEB4142628F2A000E84553 /* CardStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
 		27FEB42E2628FA5000E84553 /* CardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContent.swift; sourceTree = "<group>"; };
 		27FEB4332628FA6F00E84553 /* CardFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooter.swift; sourceTree = "<group>"; };
@@ -299,6 +309,32 @@
 			path = DashBoardViewController;
 			sourceTree = "<group>";
 		};
+		27B5491D267A1D98003A3993 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				27B5491E267A1DBB003A3993 /* CustomTextField.swift */,
+			);
+			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		27B54920267A2819003A3993 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				27B54921267A282F003A3993 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		27B54923267A3039003A3993 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				27B54924267A3051003A3993 /* AuthService.swift */,
+				27B54926267A7497003A3993 /* Service.swift */,
+				27B54928267A754D003A3993 /* Constants.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		27CD2CD926263EBA007B24D4 = {
 			isa = PBXGroup;
 			children = (
@@ -324,10 +360,11 @@
 		27CD2CE426263EBA007B24D4 /* Nexvent */ = {
 			isa = PBXGroup;
 			children = (
+				27B54923267A3039003A3993 /* API */,
+				27B54920267A2819003A3993 /* ViewModel */,
 				27FEB3F82628F0BB00E84553 /* UIComponents */,
 				27CD2D3B262644A1007B24D4 /* Fonts */,
 				27CD2D1C26263EF2007B24D4 /* Misc */,
-				27CD2D1B26263EEA007B24D4 /* Networking */,
 				27CD2D1A26263EE2007B24D4 /* ViewControllers */,
 				27CD2D1926263EDD007B24D4 /* Views */,
 				27CD2D1826263ED5007B24D4 /* Models */,
@@ -363,7 +400,7 @@
 		27CD2D1826263ED5007B24D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				27FEB3FB2628F14900E84553 /* CardModel.swift */,
+				27FEB3FB2628F14900E84553 /* EventModel.swift */,
 				2708D917264833FF00D38C07 /* UserModel.swift */,
 			);
 			path = Models;
@@ -393,13 +430,6 @@
 				27CD2D3C2626464B007B24D4 /* LandingViewController */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		27CD2D1B26263EEA007B24D4 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		27CD2D1C26263EF2007B24D4 /* Misc */ = {
@@ -495,6 +525,7 @@
 		27FEB3F82628F0BB00E84553 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				27B5491D267A1D98003A3993 /* CustomUIElements */,
 				276F2D46264E8E8A00DF829E /* Bar Graph */,
 				2708D922264DB64D00D38C07 /* Line Graph */,
 				275F61EC263DCEC000D09115 /* Calendar */,
@@ -804,8 +835,10 @@
 				27FEB42F2628FA5000E84553 /* CardContent.swift in Sources */,
 				275F61EE263DCEDA00D09115 /* DayRangeIndicatorView.swift in Sources */,
 				2708D91D264843CA00D38C07 /* UITabBarIndicator.swift in Sources */,
+				27B5491F267A1DBB003A3993 /* CustomTextField.swift in Sources */,
 				276F2D48264E8EBC00DF829E /* BarGraph.swift in Sources */,
 				273C41EC262999270034BAA4 /* TabBarViewController.swift in Sources */,
+				27B54925267A3051003A3993 /* AuthService.swift in Sources */,
 				27FEB4342628FA6F00E84553 /* CardFooter.swift in Sources */,
 				27CD2D792627A819007B24D4 /* EventsListViewController.swift in Sources */,
 				2708D91F264843E900D38C07 /* UITabBarButton.swift in Sources */,
@@ -816,7 +849,7 @@
 				27CD2D3F26264671007B24D4 /* RegisterViewController.swift in Sources */,
 				274672E5263DBE010022A8F4 /* CalenderView.swift in Sources */,
 				271D4672263B383D001A172C /* TagView.swift in Sources */,
-				27FEB3FC2628F14900E84553 /* CardModel.swift in Sources */,
+				27FEB3FC2628F14900E84553 /* EventModel.swift in Sources */,
 				27CD2CEA26263EBA007B24D4 /* LandingViewController.swift in Sources */,
 				27CD2D822627A8B8007B24D4 /* EventsListView.swift in Sources */,
 				277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */,
@@ -826,15 +859,18 @@
 				27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */,
 				27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */,
 				27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */,
+				27B54922267A282F003A3993 /* AuthenticationViewModel.swift in Sources */,
 				277E1ACA2633670B00BFF808 /* TagsViewController.swift in Sources */,
 				2708D91B2648357C00D38C07 /* Utilities.swift in Sources */,
 				27CD2D5F26264D69007B24D4 /* LoginView.swift in Sources */,
+				27B54929267A754D003A3993 /* Constants.swift in Sources */,
 				272AC42C263068C80033C323 /* DashBoardView.swift in Sources */,
 				2708D918264833FF00D38C07 /* UserModel.swift in Sources */,
 				27CD2D8B2627AC94007B24D4 /* CustomCell.swift in Sources */,
 				27CD2CE826263EBA007B24D4 /* SceneDelegate.swift in Sources */,
 				2708D924264DB66300D38C07 /* Chart.swift in Sources */,
 				277E1AD42633682900BFF808 /* Map.swift in Sources */,
+				27B54927267A7497003A3993 /* Service.swift in Sources */,
 				27FEB4392628FA8300E84553 /* CardOverlay.swift in Sources */,
 				273C41D4262998240034BAA4 /* UITabBar.swift in Sources */,
 			);

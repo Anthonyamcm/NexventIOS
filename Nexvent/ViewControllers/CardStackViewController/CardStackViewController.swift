@@ -10,31 +10,32 @@ import UIKit
 import Shuffle_iOS
 
 
+
 class CardStackViewController: UIViewController {
     
     private let cardStack = SwipeCardStack()
     
     private let cardModels = [
         
-        CardModel(name: "Michelle",
+        EventModel(name: "Michelle",
                                 location: "Graphic Designer",
                                 image: UIImage(named: "party")),
-        CardModel(name: "Joshua",
+        EventModel(name: "Joshua",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
-        CardModel(name: "Mathew",
+        EventModel(name: "Mathew",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
-        CardModel(name: "Fraser",
+        EventModel(name: "Fraser",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
-        CardModel(name: "Scott",
+        EventModel(name: "Scott",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
-        CardModel(name: "Me",
+        EventModel(name: "Me",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
-        CardModel(name: "Erin",
+        EventModel(name: "Erin",
                                location: "Graphic Designer",
                                image: UIImage(named: "party")),
     ]
@@ -63,7 +64,10 @@ class CardStackViewController: UIViewController {
     @objc private func handleShift(_ sender: UIButton) {
         cardStack.shift(withDistance: sender.tag == 1 ? -1 : 1, animated: true)
     }
+    
+    
 }
+
 
 //MARK: Data Source + Delegates
 extension CardStackViewController: SwipeCardStackDataSource, SwipeCardStackDelegate {

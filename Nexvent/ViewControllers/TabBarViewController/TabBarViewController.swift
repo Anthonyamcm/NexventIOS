@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftIcons
+import Firebase
 
 class TabBarViewController: TabBarController {
 
@@ -27,5 +28,34 @@ class TabBarViewController: TabBarController {
         
         super.viewDidLoad()
         
+        checkIfUserIsLoggedIn()
+//        logout()
+        
+    }
+    
+
+    func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser == nil{
+            presentandingController()
+        }else{
+            print("User loged in")
+        }
+    }
+    
+    func logout(){
+        do{
+            try Auth.auth().signOut()
+        } catch {
+            
+        }
+    }
+    
+    func presentandingController(){
+        DispatchQueue.main.async {
+            let controller = LandingViewController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
     }
 }

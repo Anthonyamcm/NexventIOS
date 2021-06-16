@@ -11,7 +11,7 @@ import UIKit
 class LoginView: UIView {
     var shouldSetupConstraints = true
     
-    var Back_Button: UIButton = {
+    var backButton: UIButton = {
             var Button = UIButton()
             Button.translatesAutoresizingMaskIntoConstraints = false
             Button.setImage(UIImage.init(icon: .fontAwesomeSolid(.times), size: CGSize(width: 42, height: 42), textColor: UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)), for: .normal)
@@ -20,7 +20,7 @@ class LoginView: UIView {
             return Button
         }()
     
-    var Login_Title: UILabel = {
+    var loginTitle: UILabel = {
         var Title = UILabel()
         Title.translatesAutoresizingMaskIntoConstraints = false
         Title.textColor = UIColor(red: 70/256, green: 56/256, blue: 83/256, alpha: 1.0)
@@ -30,47 +30,15 @@ class LoginView: UIView {
         return Title
     }()
     
-    var Email_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.emailAddress
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
-        return TextField
-    }()
+    var emailTextField = CustomTextField(placeholder: "Email")
     
-    
-    var Password_Field: UITextField = {
-        var TextField = UITextField()
-        TextField.translatesAutoresizingMaskIntoConstraints = false
-        TextField.adjustsFontSizeToFitWidth = true
-        TextField.layer.masksToBounds = false
-        TextField.backgroundColor = .white
-        TextField.textColor = .black
-        TextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        TextField.keyboardType = UIKeyboardType.default
+    var passwordTextField: UITextField = {
+        var TextField = CustomTextField(placeholder: "Password")
         TextField.isSecureTextEntry = true
-        TextField.layer.shadowOpacity = 0.15
-        TextField.layer.shadowRadius = 6
-        TextField.layer.shadowColor = UIColor.lightGray.cgColor
-        TextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        TextField.layer.cornerRadius = 6
-        TextField.setLeftPaddingPoints(15)
-        TextField.font = UIFont(name: "GTEestiDisplay-Medium", size: 22)
         return TextField
     }()
     
-    var ForgotPassword_Button: UIButton = {
+    var forgotPasswordButton: UIButton = {
         var Button = UIButton()
         Button.translatesAutoresizingMaskIntoConstraints = false
         Button.setTitle("Forgot password?", for: .normal)
@@ -81,7 +49,7 @@ class LoginView: UIView {
     }()
     
     
-    var Login_Button: GradientButton = {
+    var loginButton: GradientButton = {
         var Button = GradientButton()
         Button.translatesAutoresizingMaskIntoConstraints = false
         Button.setTitle("Log In", for: .normal)
@@ -100,50 +68,47 @@ class LoginView: UIView {
         super.init(frame: frame)
         
         
-        self.addSubview(Back_Button)
+        self.addSubview(backButton)
+        
+        backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
+        backButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+        
+        
+        self.addSubview(loginTitle)
+        
+        loginTitle.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        loginTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
+        loginTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        
+        
+        self.addSubview(emailTextField)
+        
+        emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: loginTitle.bottomAnchor, constant: 50).isActive = true
+        emailTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
         
     
-        Back_Button.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
-        Back_Button.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+        self.addSubview(passwordTextField)
+        
+        passwordTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
         
         
-        self.addSubview(Login_Title)
+        self.addSubview(forgotPasswordButton)
         
-        Login_Title.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        Login_Title.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
-        Login_Title.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        
-        
-        self.addSubview(Email_Field)
-        
-        Email_Field.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        Email_Field.topAnchor.constraint(equalTo: Login_Title.bottomAnchor, constant: 50).isActive = true
-        Email_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
-        Email_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-    
-        self.addSubview(Password_Field)
-        
-        Password_Field.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        Password_Field.topAnchor.constraint(equalTo: Email_Field.bottomAnchor, constant: 25).isActive = true
-        Password_Field.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
-        Password_Field.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        forgotPasswordButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 25).isActive = true
+        forgotPasswordButton.widthAnchor.constraint(equalTo: self.widthAnchor,  multiplier: 0.85).isActive = true
+        forgotPasswordButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
-        self.addSubview(ForgotPassword_Button)
+        self.addSubview(loginButton)
         
-        ForgotPassword_Button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        ForgotPassword_Button.topAnchor.constraint(equalTo: Password_Field.bottomAnchor, constant: 25).isActive = true
-        ForgotPassword_Button.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -150).isActive = true
-        ForgotPassword_Button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
-        self.addSubview(Login_Button)
-        
-        Login_Button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        Login_Button.topAnchor.constraint(equalTo: ForgotPassword_Button.bottomAnchor, constant: 25).isActive = true
-        Login_Button.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -150).isActive = true
-        Login_Button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 25).isActive = true
+        loginButton.widthAnchor.constraint(equalTo: self.widthAnchor,  multiplier: 0.85).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
         self.layoutIfNeeded()
