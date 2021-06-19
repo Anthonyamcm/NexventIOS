@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class CardContent: UIView {
     private let backgroundView: UIView = {
@@ -31,9 +32,9 @@ class CardContent: UIView {
         return gradient
     }()
     
-    init(image: UIImage?) {
+    init(image: URL) {
         super.init(frame: .zero)
-        imageView.image = image
+        imageView.sd_setImage(with: image)
         initialize()
     }
     

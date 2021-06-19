@@ -13,6 +13,7 @@ target 'Nexvent' do
   pod 'Firebase/Storage'
   pod 'Hero'
   pod 'SwiftIcons'
+  pod 'SDWebImage'
 
 
   # Pods for Nexvent

@@ -9,4 +9,5 @@ import Foundation
 import Firebase
 
 let COLLECTION_USERS = Firestore.firestore().collection("Users")
+let COLLECTION_EVENTS = Firestore.firestore().collection("Events")
 

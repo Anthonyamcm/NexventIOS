@@ -164,11 +164,13 @@ class DashBoardView: UIView {
         
         DashBoardTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         DashBoardTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+        DashBoardTitle.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         self.addSubview(DashBoardSubTitle)
         
         DashBoardSubTitle.topAnchor.constraint(equalTo: DashBoardTitle.bottomAnchor, constant: 0).isActive = true
         DashBoardSubTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+        DashBoardSubTitle.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         self.addSubview(Settings)
         
@@ -204,7 +206,7 @@ class DashBoardView: UIView {
         collectionView.topAnchor.constraint(equalTo: TagsTitle.bottomAnchor, constant: 10).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: TagsView.leadingAnchor, constant: 10).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: TagsView.trailingAnchor, constant: -10).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: TagsView.bottomAnchor, constant: -5).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: TagsView.heightAnchor).isActive = true
         
         self.addSubview(CalendarView)
         

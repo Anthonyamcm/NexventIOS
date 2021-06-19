@@ -26,9 +26,9 @@ class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate
       return dateFormatter
     }()
     
-    let strings = ["AutoLayout", "dynamically", "calculates", "the", "size", "and", "position",
-                           "of", "all", "the", "views", "in", "your", "view", "hierarchy", "based",
-                           "on", "constraints", "placed", "on", "those", "views"]
+    var strings: [String] = []
+    
+    var viewModel: User!
 
     var DashBoard: DashBoardView!
     
@@ -55,7 +55,12 @@ class DashboardViewController: UIViewController,TTGTextTagCollectionViewDelegate
     func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid else {return}
         Service.fetchUser(withUid: uid) { user in
-            self.DashBoard.DashBoardSubTitle.text = user.name
+            self.viewModel = user
+            DispatchQueue.main.async {
+                self.DashBoard.DashBoardSubTitle.text = self.viewModel.name
+                self.strings = self.viewModel.tags
+                print(self.viewModel.tags)
+            }
         }
     }
 

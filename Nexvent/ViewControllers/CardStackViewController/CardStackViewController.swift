@@ -15,30 +15,7 @@ class CardStackViewController: UIViewController {
     
     private let cardStack = SwipeCardStack()
     
-    private let cardModels = [
-        
-        EventModel(name: "Michelle",
-                                location: "Graphic Designer",
-                                image: UIImage(named: "party")),
-        EventModel(name: "Joshua",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-        EventModel(name: "Mathew",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-        EventModel(name: "Fraser",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-        EventModel(name: "Scott",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-        EventModel(name: "Me",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-        EventModel(name: "Erin",
-                               location: "Graphic Designer",
-                               image: UIImage(named: "party")),
-    ]
+    private var viewModels = [EventViewModel]()
     
     
     override func viewDidLoad() {
@@ -47,6 +24,7 @@ class CardStackViewController: UIViewController {
         cardStack.dataSource = self
         layoutCardStackView()
         configureBackgroundGradient()
+        fetchEvents()
     }
     
     private func configureBackgroundGradient() {
@@ -65,6 +43,16 @@ class CardStackViewController: UIViewController {
         cardStack.shift(withDistance: sender.tag == 1 ? -1 : 1, animated: true)
     }
     
+    func fetchEvents(){
+        Service.fetchEvents { events in
+            self.viewModels = events.map({EventViewModel(event: $0)})
+            DispatchQueue.main.async {
+                let newIndices = Array(0..<self.viewModels.count)
+                self.cardStack.appendCards(atIndices: newIndices)
+            }
+        }
+    }
+    
     
 }
 
@@ -81,15 +69,15 @@ extension CardStackViewController: SwipeCardStackDataSource, SwipeCardStackDeleg
               card.setOverlay(CardOverlay(direction: direction), forDirection: direction)
     }
         
-        let model = cardModels[index]
-        card.content = CardContent(image: model.image)
-        card.footer = CardFooter(title: "\(model.name)", subtitle: model.location)
+        let model = viewModels[index]
+        card.content = CardContent(image: model.imageURL)
+        card.footer = CardFooter(title: "\(model.name)", subtitle: model.company)
 
             return card
           }
     
     func numberOfCards(in cardStack: SwipeCardStack) -> Int {
-        return cardModels.count
+        return viewModels.count
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
@@ -97,11 +85,11 @@ extension CardStackViewController: SwipeCardStackDataSource, SwipeCardStackDeleg
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
-        print("Undo \(direction) swipe on \(cardModels[index].name)")
+        print("Undo \(direction) swipe on \(viewModels[index].name)")
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
-        print("Swiped \(direction) on \(cardModels[index].name)")
+        print("Swiped \(direction) on \(viewModels[index].name)")
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {

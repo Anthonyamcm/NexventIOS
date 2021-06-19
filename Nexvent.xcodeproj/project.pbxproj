@@ -25,6 +25,9 @@
 		2748D042263DF2B500E0033E /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748D041263DF2B500E0033E /* MonthView.swift */; };
 		275F61EE263DCEDA00D09115 /* DayRangeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F61ED263DCEDA00D09115 /* DayRangeIndicatorView.swift */; };
 		275F61F0263DCF1500D09115 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F61EF263DCF1500D09115 /* DayView.swift */; };
+		27688098267E13C600D952F6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27688097267E13C600D952F6 /* Service.swift */; };
+		2768809A267E180600D952F6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27688099267E180600D952F6 /* UserViewModel.swift */; };
+		2768809C267E18B000D952F6 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2768809B267E18B000D952F6 /* EventViewModel.swift */; };
 		276F2D48264E8EBC00DF829E /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F2D47264E8EBC00DF829E /* BarGraph.swift */; };
 		276F2D4A264E8ED300DF829E /* BarGraphPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F2D49264E8ED300DF829E /* BarGraphPresenter.swift */; };
 		277E1AB0263365B700BFF808 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E1AAF263365B700BFF808 /* MapViewController.swift */; };
@@ -35,7 +38,6 @@
 		27B5491F267A1DBB003A3993 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5491E267A1DBB003A3993 /* CustomTextField.swift */; };
 		27B54922267A282F003A3993 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54921267A282F003A3993 /* AuthenticationViewModel.swift */; };
 		27B54925267A3051003A3993 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54924267A3051003A3993 /* AuthService.swift */; };
-		27B54927267A7497003A3993 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54926267A7497003A3993 /* Service.swift */; };
 		27B54929267A754D003A3993 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B54928267A754D003A3993 /* Constants.swift */; };
 		27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */; };
 		27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2CE526263EBA007B24D4 /* AppDelegate.swift */; };
@@ -57,7 +59,7 @@
 		27CD2D792627A819007B24D4 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D782627A819007B24D4 /* EventsListViewController.swift */; };
 		27CD2D822627A8B8007B24D4 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D812627A8B8007B24D4 /* EventsListView.swift */; };
 		27CD2D8B2627AC94007B24D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD2D8A2627AC94007B24D4 /* CustomCell.swift */; };
-		27FEB3FC2628F14900E84553 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB3FB2628F14900E84553 /* EventModel.swift */; };
+		27FEB3FC2628F14900E84553 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB3FB2628F14900E84553 /* Event.swift */; };
 		27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB4142628F2A000E84553 /* CardStackViewController.swift */; };
 		27FEB42F2628FA5000E84553 /* CardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB42E2628FA5000E84553 /* CardContent.swift */; };
 		27FEB4342628FA6F00E84553 /* CardFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB4332628FA6F00E84553 /* CardFooter.swift */; };
@@ -103,6 +105,9 @@
 		2748D041263DF2B500E0033E /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		275F61ED263DCEDA00D09115 /* DayRangeIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRangeIndicatorView.swift; sourceTree = "<group>"; };
 		275F61EF263DCF1500D09115 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		27688097267E13C600D952F6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		27688099267E180600D952F6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		2768809B267E18B000D952F6 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		276F2D47264E8EBC00DF829E /* BarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
 		276F2D49264E8ED300DF829E /* BarGraphPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphPresenter.swift; sourceTree = "<group>"; };
 		277E1AAF263365B700BFF808 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +118,6 @@
 		27B5491E267A1DBB003A3993 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27B54921267A282F003A3993 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		27B54924267A3051003A3993 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		27B54926267A7497003A3993 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		27B54928267A754D003A3993 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27B7BE72264ECCD500482766 /* DayViewDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDashBoard.swift; sourceTree = "<group>"; };
 		27CD2CE226263EBA007B24D4 /* Nexvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +145,7 @@
 		27CD2D782627A819007B24D4 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		27CD2D812627A8B8007B24D4 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		27CD2D8A2627AC94007B24D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		27FEB3FB2628F14900E84553 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		27FEB3FB2628F14900E84553 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		27FEB4142628F2A000E84553 /* CardStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
 		27FEB42E2628FA5000E84553 /* CardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContent.swift; sourceTree = "<group>"; };
 		27FEB4332628FA6F00E84553 /* CardFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooter.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				27B54921267A282F003A3993 /* AuthenticationViewModel.swift */,
+				27688099267E180600D952F6 /* UserViewModel.swift */,
+				2768809B267E18B000D952F6 /* EventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -329,8 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				27B54924267A3051003A3993 /* AuthService.swift */,
-				27B54926267A7497003A3993 /* Service.swift */,
 				27B54928267A754D003A3993 /* Constants.swift */,
+				27688097267E13C600D952F6 /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -400,7 +406,7 @@
 		27CD2D1826263ED5007B24D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				27FEB3FB2628F14900E84553 /* EventModel.swift */,
+				27FEB3FB2628F14900E84553 /* Event.swift */,
 				2708D917264833FF00D38C07 /* UserModel.swift */,
 			);
 			path = Models;
@@ -849,17 +855,20 @@
 				27CD2D3F26264671007B24D4 /* RegisterViewController.swift in Sources */,
 				274672E5263DBE010022A8F4 /* CalenderView.swift in Sources */,
 				271D4672263B383D001A172C /* TagView.swift in Sources */,
-				27FEB3FC2628F14900E84553 /* EventModel.swift in Sources */,
+				27FEB3FC2628F14900E84553 /* Event.swift in Sources */,
 				27CD2CEA26263EBA007B24D4 /* LandingViewController.swift in Sources */,
 				27CD2D822627A8B8007B24D4 /* EventsListView.swift in Sources */,
 				277E1ACF2633671F00BFF808 /* CalendarViewController.swift in Sources */,
 				27CD2D342626426A007B24D4 /* RegisterView.swift in Sources */,
 				27A48CA4262ECBA3008F870C /* DashboardViewController.swift in Sources */,
 				2708D926264DB69300D38C07 /* CurveAlgorithm.swift in Sources */,
+				2768809C267E18B000D952F6 /* EventViewModel.swift in Sources */,
 				27B7BE73264ECCD500482766 /* DayViewDashBoard.swift in Sources */,
 				27FEB4152628F2A000E84553 /* CardStackViewController.swift in Sources */,
 				27CD2CE626263EBA007B24D4 /* AppDelegate.swift in Sources */,
 				27B54922267A282F003A3993 /* AuthenticationViewModel.swift in Sources */,
+				27688098267E13C600D952F6 /* Service.swift in Sources */,
+				2768809A267E180600D952F6 /* UserViewModel.swift in Sources */,
 				277E1ACA2633670B00BFF808 /* TagsViewController.swift in Sources */,
 				2708D91B2648357C00D38C07 /* Utilities.swift in Sources */,
 				27CD2D5F26264D69007B24D4 /* LoginView.swift in Sources */,
@@ -870,7 +879,6 @@
 				27CD2CE826263EBA007B24D4 /* SceneDelegate.swift in Sources */,
 				2708D924264DB66300D38C07 /* Chart.swift in Sources */,
 				277E1AD42633682900BFF808 /* Map.swift in Sources */,
-				27B54927267A7497003A3993 /* Service.swift in Sources */,
 				27FEB4392628FA8300E84553 /* CardOverlay.swift in Sources */,
 				273C41D4262998240034BAA4 /* UITabBar.swift in Sources */,
 			);
